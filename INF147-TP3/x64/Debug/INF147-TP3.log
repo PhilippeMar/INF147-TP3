@@ -1,0 +1,7 @@
+﻿  main.cpp
+main.obj : error LNK2019: unresolved external symbol circle referenced in function main
+main.obj : error LNK2019: unresolved external symbol line referenced in function main
+main.obj : error LNK2019: unresolved external symbol setcolor referenced in function main
+main.obj : error LNK2019: unresolved external symbol initwindow referenced in function main
+graphics.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+E:\OneDrive - ETS\Session_1\INF147\TP3\INF147-TP3\x64\Debug\INF147-TP3.exe : fatal error LNK1120: 4 unresolved externals
