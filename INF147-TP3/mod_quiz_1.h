@@ -38,22 +38,27 @@ T_PIXEL_CALCULER_NORME
 
 	Calcule la norme d'un pixel.
 
- PARAMÈTRES :
+ PARAMÃˆTRES :
 
 	 - pixel_ptr : Une reference vers un pixel (type: t_pixel*).
 
  VALEUR DE RETOUR :
 
-	- norme : La norme du pixel (type: unsigned char)
+	- norme : La norme du pixel (type: unsigned int)
 */
-unsigned char t_pixel_calculer_norme(const t_pixel* pixel_ptr);
+unsigned char t_pixel_calculer_norme(const t_pixel* pixel_ptr)
+{
+	unsigned char norme = sqrt(pow(pixel_ptr->r, 2) + pow(pixel_ptr->g, 2) + pow(pixel_ptr->b,2));
+
+	return norme;
+}
 
 /*
 T_PIXEL_NORMALISER
 
 	Normalise un pixel enn divisant les composants par la norme.
 
- PARAMÈTRES :
+ PARAMÃˆTRES :
 
 	 - pixel_ptr : Une reference vers un pixel (type: t_pixel*).
 
@@ -61,14 +66,24 @@ T_PIXEL_NORMALISER
 
 	- Aucune.
 */
-void t_pixel_normaliser(t_pixel* pixel_ptr);
+void t_pixel_normaliser(t_pixel* pixel_ptr)
+{
+	unsigned char norme = t_pixel_calculer_norme(pixel_ptr);
+
+	if (norme != 0) //on evite de diviser par 0
+	{
+		pixel_ptr->r /= norme;
+		pixel_ptr->g /= norme;
+		pixel_ptr->b /= norme;
+	}
+}
 
 /*
 T_PIXEL_PERMUTER
 
 	Permute deux pixels en permutant leurs composants.
 
- PARAMÈTRES :
+ PARAMÃˆTRES :
 
 	- pixel_1_ptr : Une reference vers un premier pixel (type: t_pixel*).
 	- pixel_2_ptr : Une reference vers un deuxieme pixel (type: t_pixel*).
@@ -77,14 +92,28 @@ T_PIXEL_PERMUTER
 
 	- Aucune.
 */
-void t_pixel_permuter(t_pixel* pixel_1_ptr, t_pixel* pixel_2_ptr);
+void t_pixel_permuter(t_pixel* pixel_1_ptr, t_pixel* pixel_2_ptr)
+{
+	unsigned char temp_r = pixel_1_ptr->r;
+	unsigned char temp_g = pixel_1_ptr->g;
+	unsigned char temp_b = pixel_1_ptr->b;
+
+	pixel_1_ptr->r = pixel_2_ptr->r;
+	pixel_1_ptr->g = pixel_2_ptr->g;
+	pixel_1_ptr->b = pixel_2_ptr->b;
+
+	pixel_2_ptr->r = temp_r;
+	pixel_2_ptr->r = temp_r;
+	pixel_2_ptr->r = temp_r;
+
+}
 
 /*
 T_PIXEL_AFFICHER
 
 	Affiche un pixel sur un canevas a une position (x,y) donnee.
 
- PARAMÈTRES :
+ PARAMÃˆTRES :
 
 	- x: La position x du pixel a afficher (type: unsigned int).
 	- y: La position y du pixel a afficher (type: unsigned int).
@@ -96,14 +125,17 @@ T_PIXEL_AFFICHER
 */
 void t_pixel_afficher(const unsigned int x,
 	const unsigned int y,
-	const t_pixel* pixel_ptr);
+	const t_pixel* pixel_ptr)
+{
+	putpixel(x, y, COLOR(pixel_ptr->r, pixel_ptr->g, pixel_ptr->b));
+}
 
 /*
 T_IMAGE_INITIALISER_ALEATOIRE
 
 	Initialise une image avec des pixels dont les composants sont choisis de maniere aleatoire.
 
- PARAMÈTRES :
+ PARAMÃˆTRES :
 
 	- image_ptr: Une reference vers une image (type: t_image*).
 
@@ -111,14 +143,26 @@ T_IMAGE_INITIALISER_ALEATOIRE
 
 	- Aucune.
 */
-void t_image_initialiser_aleatoire(t_image* image_ptr);
+void t_image_initialiser_aleatoire(t_image* image_ptr)
+{
+	for (int i = 0; i < IMAGE_HAUTEUR; i++)
+	{
+		for (int j = 0; j < IMAGE_LARGEUR; j++)
+		{
+			image_ptr->pixels[i][j].r = GENERER_PIXEL_ALEATOIRE;
+			image_ptr->pixels[i][j].g = GENERER_PIXEL_ALEATOIRE;
+			image_ptr->pixels[i][j].b = GENERER_PIXEL_ALEATOIRE;
+			
+		}
+	}
+}
 
 /*
 T_IMAGE_NORMALISER
 
 	Normalise les pixels d'une image.
 
- PARAMÈTRES :
+ PARAMÃˆTRES :
 
 	- image_ptr: Une reference vers une image (type: t_image*).
 
@@ -126,14 +170,23 @@ T_IMAGE_NORMALISER
 
 	- Aucune.
 */
-void t_image_normaliser(t_image* image_ptr);
+void t_image_normaliser(t_image* image_ptr)
+{
+	for (int i = 0; i < IMAGE_HAUTEUR; i++)
+	{
+		for (int j = 0; j < IMAGE_LARGEUR; j++)
+		{
+			t_pixel_normaliser(&image_ptr->pixels[i][j]);
+		}
+	}
+}
 
 /*
-T_IMAGE_NORMALISER
+T_IMAGE_AFFICHER
 
 	Affiche une image sur un canevas.
 
- PARAMÈTRES :
+ PARAMÃˆTRES :
 
 	- image_ptr: Une reference vers une image (type: t_image*).
 
@@ -141,6 +194,15 @@ T_IMAGE_NORMALISER
 
 	- Aucune.
 */
-void t_image_afficher(const t_image* image_ptr);
+void t_image_afficher(const t_image* image_ptr)
+{
+	for (int i = 0; i < IMAGE_HAUTEUR; i++)
+	{
+		for (int j = 0; j < IMAGE_LARGEUR; j++)
+		{
+			t_pixel_afficher(i, j, &image_ptr->pixels[i][j]);
+		}
+	}
+}
 
 #endif
