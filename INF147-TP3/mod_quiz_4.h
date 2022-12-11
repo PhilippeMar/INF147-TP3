@@ -23,7 +23,7 @@ T_IMAGE_INITIALISER
 
 	Initialise une image dynamique.
 
- PARAMÈTRES :
+ PARAMÃˆTRES :
 
 	- Aucuns.
 
@@ -51,7 +51,7 @@ T_ANIMATION_CHARGER_PILE
 
 	Charge une animation a partir d'un fichier CSV.
 
- PARAMÈTRES :
+ PARAMÃˆTRES :
 
 	- nom_fichier: Le nom du fichier CSV a lire (type: const unsigned char*).
 
@@ -85,7 +85,9 @@ t_animation* t_animation_charger_pile(const char* nom_fichier)
 	while (fgets(ligne_lu, TAILLE_LIGNE_MAX, mon_fichier) != NULL)
 	{
 		strncpy((char*)image_ptr, ligne_lu, TAILLE_LIGNE_MAX);
+		;
 	}
+	
 	
 	if (true)
 	{
@@ -105,7 +107,7 @@ T_ANIMATION_JOUER
 
 	Joue une animation fournie.
 
- PARAMÈTRES :
+ PARAMÃˆTRES :
 
 	- animation_ptr: Une reference vers l'animation chargee (type: t_animation*).
 
@@ -122,10 +124,10 @@ void t_animation_jouer(t_animation* une_animation)
 	else
 	{
 		initwindow(IMAGE_LARGEUR, IMAGE_HAUTEUR);
-		while (true)
+		while (une_animation != NULL)
 		{
 			t_pile_dynamique_image_depiler(une_animation);
-			//t_image_afficher();
+			t_image_afficher(une_animation->tete->image);
 		}
 	}
 }
