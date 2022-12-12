@@ -6,7 +6,7 @@ Auteurs :	Barry Lawson
 Date : Decembre 2022
 
 --Description
-	Ce fichier permet 
+	Ce fichier permet d'afficher des pixels et images
 
 On y retrouve les sous-programmes suivants :
 	- t_pixel_calculer_norme

@@ -6,7 +6,7 @@ Auteurs :	Barry Lawson
 Date : Decembre 2022
 
 --Description
-	Ce fichier permet 
+	Ce fichier permet d'utiliser des piles statiques
 
 On y retrouve les sous-programmes suivants :
 	- t_pile_image_initialiser

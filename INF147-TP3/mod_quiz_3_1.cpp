@@ -125,7 +125,7 @@ t_image* t_pile_dynamique_image_depiler(t_pile_dynamique_image* pile_image_ptr)
 	// On remplace la tete de la pile par le prochain noeud
 	pile_image_ptr->tete = noeud_image_ptr->prochain;
 	// On libere la memoire du noeud
-	free(noeud_image_ptr);
+	t_noeud_image_detruire(noeud_image_ptr);
 	// Decremente la taille
 	--pile_image_ptr->taille;
 

@@ -6,7 +6,7 @@ Auteurs :	Barry Lawson
 Date : Decembre 2022
 
 --Description
-	Ce fichier permet 
+	Ce fichier permet d'utiliser des files statiques
 
 On y retrouve les sous-programmes suivants :
 	- t_file_image_initialiser

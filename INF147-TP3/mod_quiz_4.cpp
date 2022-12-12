@@ -107,6 +107,7 @@ t_animation* t_animation_charger_pile(const char* nom_fichier)
 			if (++couleur > BLEU)
 			{
 				couleur = ROUGE;
+				// On empile l'image dans l'animation
 				t_pile_dynamique_image_empiler(animation_ptr, image_ptr);
 				// On initialise une image
 				image_ptr = t_image_initialiser();
@@ -140,6 +141,7 @@ void t_animation_jouer(t_animation* une_animation)
 
 	while (!t_pile_dynamique_image_est_vide(une_animation))
 	{
+		// Afficher l'image sur le dessus de la pile
 		t_image* image_ptr = t_pile_dynamique_image_depiler(une_animation);
 		t_image_afficher(image_ptr);
 		// On libere la memoire
