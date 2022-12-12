@@ -59,25 +59,25 @@ t_pile_dynamique_image* t_pile_dynamique_image_initialiser(t_image* image_ptr)
 // Empile une image dans une pile dynamique.
 unsigned char t_pile_dynamique_image_empiler(t_pile_dynamique_image* pile_image_ptr, t_image* image_ptr)
 {
+	// Verifier que la pile est initialise
 	if (pile_image_ptr == NULL)
 	{
 		printf("t_pile_dynamique_image_empiler > Erreur de memoire non allocalise (pile)\n");
 		return EXIT_FAILURE;
 	}
-
+	// Verifier que l'image est initialise
 	if (image_ptr == NULL)
 	{
 		printf("t_pile_dynamique_image_empiler > Erreur de memoire non allocalise (image)\n");
 		return EXIT_FAILURE;
 	}
-
+	// Initialiser un nouveau noeud
 	t_noeud_image* noeud_image_ptr = t_noeud_image_initialiser(image_ptr);
-
 	if (noeud_image_ptr == NULL)
 	{
 		return EXIT_FAILURE;
 	}
-
+	// Inserer le nouveau noeud au debut de la pile
 	noeud_image_ptr->prochain = pile_image_ptr->tete;
 	pile_image_ptr->tete = noeud_image_ptr;
 	pile_image_ptr->taille++;
@@ -108,13 +108,13 @@ t_image* t_pile_dynamique_image_depiler(t_pile_dynamique_image* pile_image_ptr)
 	// On verifie que la pile est initialise
 	if (pile_image_ptr == NULL)
 	{
-		printf("t_pile_dynamique_image_empiler > Erreur de memoire non allocalise (pile)\n");
+		printf("t_pile_dynamique_image_depiler > Erreur de memoire non allocalise (pile)\n");
 		return NULL;
 	}
 	// On verifie que la pile n'est pas vide
 	if (t_pile_dynamique_image_est_vide(pile_image_ptr))
 	{
-		printf("t_pile_dynamique_image_empiler > ERREUR > La pile est vide\n");
+		printf("t_pile_dynamique_image_depiler > ERREUR > La pile est vide\n");
 		return NULL;
 	}
 
