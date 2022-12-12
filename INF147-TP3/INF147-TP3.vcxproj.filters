@@ -27,6 +27,15 @@
     <ClCompile Include="mod_quiz_2_2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="mod_quiz_3_0.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mod_quiz_3_1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mod_quiz_3_2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="graphics.h">
@@ -39,6 +48,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mod_quiz_2_2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mod_quiz_3_0.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mod_quiz_3_1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mod_quiz_3_2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

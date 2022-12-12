@@ -18,9 +18,7 @@ On y retrouve les sous-programmes suivants :
 
 #include "mod_quiz_2_2.h"
 
-#include "graphics.h"
-
-#include <math.h>
+#include <stdio.h>
 
 /*****************************************************************************************
 *                                  FONCTIONS PUBLIQUES                                   *

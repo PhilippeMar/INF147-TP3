@@ -131,12 +131,18 @@
     <ClCompile Include="mod_quiz_1.cpp" />
     <ClCompile Include="mod_quiz_2_1.cpp" />
     <ClCompile Include="mod_quiz_2_2.cpp" />
+    <ClCompile Include="mod_quiz_3_0.cpp" />
+    <ClCompile Include="mod_quiz_3_1.cpp" />
+    <ClCompile Include="mod_quiz_3_2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="graphics.h" />
     <ClInclude Include="mod_quiz_1.h" />
     <ClInclude Include="mod_quiz_2_1.h" />
     <ClInclude Include="mod_quiz_2_2.h" />
+    <ClInclude Include="mod_quiz_3_0.h" />
+    <ClInclude Include="mod_quiz_3_1.h" />
+    <ClInclude Include="mod_quiz_3_2.h" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="graphics.lib" />
