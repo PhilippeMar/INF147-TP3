@@ -22,8 +22,8 @@ Fichier :
 #define QUIZ_2_1	0
 #define QUIZ_2_2	0
 #define QUIZ_3_1    0
-#define QUIZ_3_2    1
-#define QUIZ_4      0
+#define QUIZ_3_2    0
+#define QUIZ_4      1
 
 /****************************************************************************************
 *                           DÉFINTION DU PROGRAMME PRINCIPALE                           *

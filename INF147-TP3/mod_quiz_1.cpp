@@ -63,7 +63,7 @@ void t_pixel_afficher(const unsigned int x,
 	const unsigned int y,
 	const t_pixel* pixel_ptr)
 {
-	putpixel(x, y, COLOR(pixel_ptr->r, pixel_ptr->g, pixel_ptr->b));
+	putpixel(y, x, COLOR(pixel_ptr->r, pixel_ptr->g, pixel_ptr->b));
 }
 
 // Initialise une image avec des pixels dont les composants sont choisis de maniere aleatoire.

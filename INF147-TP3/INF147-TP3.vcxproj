@@ -134,6 +134,7 @@
     <ClCompile Include="mod_quiz_3_0.cpp" />
     <ClCompile Include="mod_quiz_3_1.cpp" />
     <ClCompile Include="mod_quiz_3_2.cpp" />
+    <ClCompile Include="mod_quiz_4.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="graphics.h" />
@@ -143,6 +144,7 @@
     <ClInclude Include="mod_quiz_3_0.h" />
     <ClInclude Include="mod_quiz_3_1.h" />
     <ClInclude Include="mod_quiz_3_2.h" />
+    <ClInclude Include="mod_quiz_4.h" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="graphics.lib" />
